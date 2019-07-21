@@ -1,0 +1,19 @@
+{% import 'messages/type-message.html.twig' as message %}
+
+<div class="flex flex-col h-full justify-between" id="block-conversation">
+    <header class="ml-4 mb-6">
+        <h2 class="text-gray-400 text-xl">Conversation avec : <span class="text-blue-300 font-bold user"></span></h2>
+    </header>
+    <div class="relative flex-1 overflow-scroll ml-4" id="conversation">
+        <div class="container-message"></div>
+        {{ message.messageWriting() }}
+    </div>
+    <form class="ml-4 flex" id="form-message">
+        <input type="text" class="w-5/6 border-gray-400 border-2 rounded-full px-2 py-1 outline-none text-gray-400" placeholder="Votre message ...">
+        <button type="submit" class="bg-blue-300 rounded-full w-1/6 ml-4 text-white focus:outline-none flex justify-center content-center">
+            <i class="material-icons ml-1">send</i>
+        </button>
+    </form>
+</div>
+
+

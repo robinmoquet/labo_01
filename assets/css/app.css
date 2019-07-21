@@ -1,0 +1,41 @@
+/*
+* CSS GLOBAL
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-size-75 {
+    height: 75vh;
+}
+
+.active {
+    @apply bg-blue-100;
+}
+
+.transition {
+    transition: all .3s ease;
+}
+
+.block-message {
+    opacity: 1;
+    top: 0;
+    transition: all .3s ease;
+}
+
+.block-message.anim-display {
+    opacity: 0;
+    top: 20px;
+}
+
+.block-message-writing {
+    opacity: 1;
+    bottom: 0;
+    transition: all .3s ease;
+}
+
+.block-message-writing.anim-display {
+    opacity: 0;
+    /*bottom: -20px;*/
+}

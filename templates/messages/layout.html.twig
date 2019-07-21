@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="bg-gray-200 min-h-screen p-8">
+        <div class="flex flex-col items-center justify-center">
+            <div class="w-full lg:w-3/4 flex">
+                <div class="mt-4 bg-white w-full p-4 rounded-lg shadow-lg">
+                    {{ include('messages/card.html.twig') }}
+                </div>
+                <div class="mt-4">
+                    <a href="" class="relative block p-2 ml-2 mb-2 w-full">
+                        <span class="bg-blue-400 text-white px-2 py-1 rounded-full text-xs absolute right-0 top-0">2</span>
+                        <img class="rounded-full h-12 w-12 max-w-6xl" src="https://picsum.photos/200?random=2" alt="">
+                    </a>
+                    <a href="" class="relative block p-2 ml-2 mb-2 w-full">
+                        <span class="bg-blue-400 text-white px-2 py-1 rounded-full text-xs absolute right-0 top-0">1</span>
+                        <img class="rounded-full h-12 w-12 max-w-6xl" src="https://picsum.photos/200?random=3" alt="">
+                    </a>
+                    <a href="" class="relative block p-2 ml-2 mb-2 w-full">
+                        <span class="bg-blue-400 text-white px-2 py-1 rounded-full text-xs absolute right-0 top-0">6</span>
+                        <img class="rounded-full h-12 w-12 max-w-6xl" src="https://picsum.photos/200?random=4" alt="">
+                    </a>
+                </div>
+            </div>
+            <p class="text-center text-gray-400 mt-4">Lire le <a href="{{ path('readme') }}" class="text-blue-200 hover:text-blue-300 underline">READ ME</a> du labo 01</p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        var token = "{{ token }}"
+    </script>
+    {{ encore_entry_script_tags('app') }}
+    {{ encore_entry_script_tags('message') }}
+{% endblock %}

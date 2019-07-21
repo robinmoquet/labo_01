@@ -1,0 +1,14 @@
+{% extends 'index.html.twig' %}
+
+{% import "macros/form.html.twig" as form %}
+
+{% block card %}
+    <h1 class="text-xl text-gray-400">Bienvenue sur le <span class="font-bold text-blue-400 block text-4xl">Labo 01</span></h1>
+    <form method="post" action="{{ path('login') }}" class="mt-4">
+        {{ form.formGroup("Email :", "_username", "email", last_username) }}
+        {{ form.formGroup("Mot de passe :", "_password", "password", null, "password") }}
+
+        {{ form.button("Connexion") }}
+    </form>
+{% endblock %}
+

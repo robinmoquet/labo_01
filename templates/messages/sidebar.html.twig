@@ -1,0 +1,10 @@
+<div class="overflow-scroll sidebar" id="sidebar">
+    <div class="mr-4">
+        <input type="text" id="search-user" class="shadow-inner w-full rounded bg-gray-100 px-2 py-1 text-gray-500 outline-none"
+               placeholder="Recherche...">
+    </div>
+
+    {% for key, user in users if user.id != app.user.id %}
+        {{ include('messages/profile-card.html.twig', {num: key, user: user}) }}
+    {% endfor %}
+</div>

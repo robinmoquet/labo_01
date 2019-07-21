@@ -1,0 +1,17 @@
+{% extends "index.html.twig" %}
+
+{% import "macros/form.html.twig" as formMacro %}
+
+{% block card %}
+    <h1 class="text-xl text-gray-400">Bienvenue sur le <span class="font-bold text-blue-400 block text-4xl">Labo 01</span></h1>
+    <form method="post" class="mt-4">
+        {{ form_widget(form.lastname) }}
+        {{ form_widget(form.firstname) }}
+        {{ form_widget(form.email) }}
+        {{ form_widget(form.password) }}
+        <div class="hide">
+            {{ form_widget(form._csrf) }}
+        </div>
+        {{ formMacro.button("S'inscrire") }}
+    </form>
+{% endblock %}

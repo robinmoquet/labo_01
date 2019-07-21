@@ -1,0 +1,29 @@
+{% macro messageReceive(text) %}
+    <div class="flex justify-start mb-4">
+        <div class="w-2/3">
+            <div class="message bg-gray-400 rounded-lg rounded-bl-none px-4 py-1">
+                <p class="text-white">{{ text }}</p>
+            </div>
+            <p class="text-gray-400 text-sm">20/01/2019</p>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro messageSend(text) %}
+    <div class="flex justify-end mb-4">
+        <div class="w-2/3">
+            <div class="message bg-blue-400 rounded-lg rounded-br-none px-4 py-1">
+                <p class="text-white">{{ text }}</p>
+            </div>
+            <p class="text-right text-gray-400 text-sm"><i class="material-icons text-sm align-middle mb-1">check</i> Lu</p>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro messageWriting() %}
+    <div class="block-message-writing anim-display absolute flex justify-start w-full mb-4">
+        <div class="message bg-gray-300 rounded-lg rounded-bl-none px-4 py-1">
+            <p class="text-white tracking-widest font-bold">...</p>
+        </div>
+    </div>
+{% endmacro %}

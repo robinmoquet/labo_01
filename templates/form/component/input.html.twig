@@ -1,0 +1,7 @@
+{% block input_widget %}
+    <div class="">
+        <label for="{{ id }}" class="block text-gray-400 font-semibold text-md uppercase mt-2">{{ label }}</label>
+        <input id="{{ id }}" name="{{ full_name }}" type="{{ type }}" autocomplete="off"
+               class="shadow-inner block outline-none w-full mt-1 h-8 bg-gray-100 rounded mt-2 px-2 text-gray-600">
+    </div>
+{% endblock %}

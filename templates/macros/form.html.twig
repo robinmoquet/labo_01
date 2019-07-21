@@ -1,0 +1,14 @@
+{% macro formGroup(label, name, id, value = "", type = "text") %}
+    <div class="">
+        <label for="{{ id }}" class="block text-gray-400 font-semibold text-md uppercase mt-2">{{ label }}</label>
+        <input id="{{ id }}" name="{{ name }}" type="{{ type }}" autocomplete="off" value="{{ value }}"
+               class="shadow-inner block outline-none w-full mt-1 h-8 bg-gray-100 rounded mt-2 px-2 text-gray-600">
+    </div>
+{% endmacro %}
+
+{% macro button(text, type = "submit", width = "w-full block") %}
+    <button type="{{ type }}"
+            class="transition mt-4 bg-blue-300 hover:bg-blue-400 text-white p-2 rounded {{ width }} shadow-md">
+        {{ text }}
+    </button>
+{% endmacro %}
