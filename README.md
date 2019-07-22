@@ -37,7 +37,10 @@ $ yarn install
 
 ### Lancer
 
-1/ Démarer le serveur php : ``php bin/console server:run``
+1/ Démarer le serveur php : 
+```
+php bin/console server:run
+```
 2/ Lancer la compilation des assets : ``yarn encore dev --watch``, ou en prod ``yarn encore production``
 3/ Lancer le hub mercure : 
 ```
