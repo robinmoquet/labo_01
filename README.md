@@ -42,6 +42,7 @@ $ yarn install
 php bin/console server:run
 ```
 2/ Lancer la compilation des assets : ``yarn encore dev --watch``, ou en prod ``yarn encore production``
+
 3/ Lancer le hub mercure : 
 ```
 JWT_KEY='aVerySecretKey' ADDR='localhost:3000' ALLOW_ANONYMOUS=1 CORS_ALLOWED_ORIGINS=* ./mercure
