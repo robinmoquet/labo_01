@@ -6,7 +6,7 @@
                 <div class="mt-4 bg-white w-full p-4 rounded-lg shadow-lg">
                     {{ include('messages/card.html.twig') }}
                 </div>
-                <div class="mt-4">
+                <div class="mt-4 hidden">
                     <a href="" class="relative block p-2 ml-2 mb-2 w-full">
                         <span class="bg-blue-400 text-white px-2 py-1 rounded-full text-xs absolute right-0 top-0">2</span>
                         <img class="rounded-full h-12 w-12 max-w-6xl" src="https://picsum.photos/200?random=2" alt="">
@@ -28,7 +28,8 @@
 
 {% block javascripts %}
     <script>
-        var token = "{{ token }}"
+        var token = "{{ token }}";
+        var currentUserEmail = "{{ app.user.email }}";
     </script>
     {{ encore_entry_script_tags('app') }}
     {{ encore_entry_script_tags('message') }}

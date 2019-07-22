@@ -1,6 +1,7 @@
 import {sendMessage} from "./callApi";
 import {createMessage, displayConversation} from "./displayHtml";
-import {HUB_URL} from "./config";
+import Event from "./Event";
+import EventPublisher from "./EventPublisher";
 
 require('./listenerMercure');
 
@@ -34,37 +35,21 @@ const handleSubmit = event => {
     sendMessage(message, emailReceiver)
         .then(message => {
             input.value = "";
-            createMessage(message);
+            createMessage(message, true, "Envoyé");
         })
 };
 
-const handleKeyUp = event => {
-    const value = event.target.value;
+const handleKeyUp = e => {
+    const value = e.target.value;
+    let event = new Event();
+    event.topic = "http://labo-01.com/message/writing";
+    event.target = "http://localhost:3000/user/" + activeUser.dataset.email;
     if(value !== "") {
-        let header = new Headers({"Authorization": "Bearer " + token.replace("mercureAuthorization=", ""), "Content-type": "application/x-www-form-urlencoded"});
-        let request = new Request(HUB_URL, {
-            method: "POST",
-            //credentials: "include",
-            headers: header,
-            body: "topic=http://labo-01.com/message/writing&data=" + JSON.stringify({status: "writing"}) + "&target=http://localhost:3000/user/" + activeUser.dataset.email
-        });
-        fetch(request)
-            .then(response => {
-
-            });
+        event.data = {status: "writing", sender: currentUserEmail};
     } else {
-        let header = new Headers({"Authorization": "Bearer " + token.replace("mercureAuthorization=", ""), "Content-type": "application/x-www-form-urlencoded"});
-        let request = new Request(HUB_URL, {
-            method: "POST",
-            //credentials: "include",
-            headers: header,
-            body: "topic=http://labo-01.com/message/writing&data=" + JSON.stringify({status: "no-writing"}) + "&target=http://localhost:3000/user/" + activeUser.dataset.email
-        });
-        fetch(request)
-            .then(response => {
-
-            });
+        event.data = {status: "no-writing", sender: currentUserEmail};
     }
+    EventPublisher.publish(event);
 };
 
 const handleClickUser = event => {
