@@ -45,5 +45,5 @@ php bin/console server:run
 
 3/ Lancer le hub mercure : 
 ```
-JWT_KEY='aVerySecretKey' ADDR='localhost:3000' ALLOW_ANONYMOUS=1 CORS_ALLOWED_ORIGINS=* ./mercure
+JWT_KEY='aVerySecretKey' ADDR='localhost:3000' ALLOW_ANONYMOUS=1 CORS_ALLOWED_ORIGINS=http://localhost:8000 ./mercure
 ```
